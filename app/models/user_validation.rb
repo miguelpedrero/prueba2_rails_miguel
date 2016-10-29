@@ -1,14 +1,16 @@
 class UserValidation < ActiveRecord::Base
-	has_many :item
+
+	has_many :item, dependent: :destroy
+
 	validates :name, :presence => true
 
 	validates :email, uniqueness: true
 
-	# after_save :txt
+	before_save 
 
-	# def txt
+	def
 
-	# end
+	end
 
 
 end
